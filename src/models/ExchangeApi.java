@@ -25,8 +25,7 @@ public class ExchangeApi {
     public Conversor callApi() {
         try {
             HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
-            Conversor conversor = new Conversor(response.body());
-            return conversor;
+            return new Conversor(response.body());
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return null;

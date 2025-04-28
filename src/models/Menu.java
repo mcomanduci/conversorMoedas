@@ -92,34 +92,33 @@ public class Menu {
 
     private void realizarConversao(int opcao, double valor, Conversor conversor) {
         double resultado = 0;
-        String simbolo = "";
-
-        switch (opcao) {
-            case 1: // USD para ARS
+        String simbolo = switch (opcao) {
+            case 1 -> {
                 resultado = valor * conversor.getArs();
-                simbolo = "ARS $";
-                break;
-            case 2: // ARS para USD
+                yield "ARS $";
+            }
+            case 2 -> {
                 resultado = valor / conversor.getArs();
-                simbolo = "USD $";
-                break;
-            case 3: // USD para BRL
+                yield "USD $";
+            }
+            case 3 -> {
                 resultado = valor * conversor.getBrl();
-                simbolo = "R$";
-                break;
-            case 4: // BRL para USD
+                yield "R$";
+            }
+            case 4 -> {
                 resultado = valor / conversor.getBrl();
-                simbolo = "USD $";
-                break;
-            case 5: // USD para BOB
+                yield "USD $";
+            }
+            case 5 -> {
                 resultado = valor * conversor.getBob();
-                simbolo = "Bs";
-                break;
-            case 6: // BOB para USD
+                yield "Bs";
+            }
+            case 6 -> {
                 resultado = valor / conversor.getBob();
-                simbolo = "USD $";
-                break;
-        }
+                yield "USD $";
+            }
+            default -> "";
+        };
 
         System.out.println("O valor convertido é " + simbolo + " " + df.format(resultado));
     }

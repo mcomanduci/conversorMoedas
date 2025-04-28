@@ -4,9 +4,9 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 public class Conversor {
-    private double ars;
-    private double bob;
-    private double brl;
+    private final double ars;
+    private final double bob;
+    private final double brl;
 
     public Conversor(String jsonResponse) {
         JsonObject root = JsonParser.parseString(jsonResponse).getAsJsonObject();
