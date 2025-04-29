@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Menu {
     private final Scanner sc = new Scanner(System.in);
-    private final DecimalFormat df = new DecimalFormat("0.00");
+    private final DecimalFormat df = new DecimalFormat("0.0000");
     private final ExchangeApi exchange = new ExchangeApi();
 
     public void openMenu() {
